@@ -3,106 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StreamFlix - Watch Movies & TV Shows</title>
-
-  <!-- Styles -->
+  <title>NetFlakes - Watch Movies & TV Shows</title>
   <link rel="stylesheet" href="css/home.css">
   <link rel="preload" href="css/home.css" as="style">
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-</style>
-
-  <!-- Scripts -->
   <link rel="preload" href="js/home.js" as="script">
-  <script defer src="js/home.js"></script>
-
-  <!-- PWA -->
   <link rel="manifest" href="manifest.json">
-
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <meta name="theme-color" content="#141414"/>
+  <script defer src="js/home.js"></script>
 </head>
 
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar" role="navigation" aria-label="Main">
+  <nav class="navbar">
     <div class="navbar-container">
-      <a class="logo" href="index.html" aria-label="StreamFlix Home">
+      <div class="logo">
         <!-- <img src="logo.png" alt="StreamFlix" /> -->
         <span class="logo-text">NETFLAKES</span>
-      </a>
-
-      <div class="nav-links" role="menubar" aria-label="Primary">
-        <a href="index.html" class="nav-link active" role="menuitem">
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">
+          <i class="fas fa-home"></i>
           <span>Home</span>
         </a>
-        <a href="#movies" class="nav-link" role="menuitem">
+        <a href="#movies" class="nav-link">
+          <i class="fas fa-film"></i>
           <span>Movies</span>
         </a>
-        <a href="#tvshows" class="nav-link" role="menuitem">
+        <a href="#tvshows" class="nav-link">
+          <i class="fas fa-tv"></i>
           <span>TV Shows</span>
         </a>
-        <a href="#anime" class="nav-link" role="menuitem">
+        <a href="#anime" class="nav-link">
+          <i class="fas fa-dragon"></i>
           <span>Anime</span>
         </a>
       </div>
-
-      <div class="right-actions">
-        <button class="search-btn" onclick="openSearchModal()" aria-label="Open search">
-          <i class="fas fa-search" aria-hidden="true"></i>
+      <div class="search-container">
+        <button class="search-btn" onclick="openSearchModal()">
+          <i class="fas fa-search"></i>
         </button>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
-          <i class="fas fa-bars" aria-hidden="true"></i>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-header">
       <span class="logo-text">Menu</span>
-      <button class="close-mobile-menu" onclick="toggleMobileMenu()" aria-label="Close menu">
-        <i class="fas fa-times" aria-hidden="true"></i>
+      <button class="close-mobile-menu" onclick="toggleMobileMenu()">
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="mobile-menu-links">
       <a href="index.html" class="mobile-nav-link active">
+        <i class="fas fa-home"></i>
         <span>Home</span>
       </a>
       <a href="#movies" class="mobile-nav-link">
+        <i class="fas fa-film"></i>
         <span>Movies</span>
       </a>
       <a href="#tvshows" class="mobile-nav-link">
+        <i class="fas fa-tv"></i>
         <span>TV Shows</span>
       </a>
       <a href="#anime" class="mobile-nav-link">
+        <i class="fas fa-dragon"></i>
         <span>Anime</span>
       </a>
-      <div class="mobile-search">
-        <button class="mobile-search-btn" onclick="openSearchModal()">
-          <i class="fas fa-search"></i>
-          <span>Search</span>
-        </button>
-      </div>
     </div>
   </div>
 
   <!-- Hero Banner -->
-  <div class="hero-banner" id="banner" role="img" aria-label="Featured title banner">
+  <div class="hero-banner" id="banner">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="hero-title" id="banner-title"></h1>
       <p class="hero-description" id="banner-description"></p>
       <div class="hero-buttons">
         <button class="btn btn-primary" id="banner-play-btn">
-          <i class="fas fa-play" aria-hidden="true"></i>
+          <i class="fas fa-play"></i>
           Play Now
         </button>
         <button class="btn btn-secondary" id="banner-info-btn">
-          <i class="fas fa-info-circle" aria-hidden="true"></i>
+          <i class="fas fa-info-circle"></i>
           More Info
         </button>
       </div>
@@ -113,81 +100,84 @@
   <!-- Content Sections -->
   <div class="content-wrapper">
     <!-- Trending Movies -->
-    <section class="content-row" id="movies" aria-label="Trending Movies">
+    <section class="content-row" id="movies">
       <div class="row-header">
         <h2 class="row-title">
-          <i class="fas fa-fire" aria-hidden="true"></i>
+          <i class="fas fa-fire"></i>
           Trending Movies
         </h2>
+        <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
       </div>
       <div class="carousel-container">
-        <button class="carousel-btn prev" onclick="scrollCarousel('movies-list', -1)" aria-label="Scroll movies left">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        <button class="carousel-btn prev" onclick="scrollCarousel('movies-list', -1)">
+          <i class="fas fa-chevron-left"></i>
         </button>
         <div class="media-list" id="movies-list"></div>
-        <button class="carousel-btn next" onclick="scrollCarousel('movies-list', 1)" aria-label="Scroll movies right">
-          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <button class="carousel-btn next" onclick="scrollCarousel('movies-list', 1)">
+          <i class="fas fa-chevron-right"></i>
         </button>
       </div>
     </section>
 
     <!-- Trending TV Shows -->
-    <section class="content-row" id="tvshows" aria-label="Trending TV Shows">
+    <section class="content-row" id="tvshows">
       <div class="row-header">
         <h2 class="row-title">
-          <i class="fas fa-fire" aria-hidden="true"></i>
+          <i class="fas fa-fire"></i>
           Trending TV Shows
         </h2>
+        <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
       </div>
       <div class="carousel-container">
-        <button class="carousel-btn prev" onclick="scrollCarousel('tvshows-list', -1)" aria-label="Scroll TV shows left">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        <button class="carousel-btn prev" onclick="scrollCarousel('tvshows-list', -1)">
+          <i class="fas fa-chevron-left"></i>
         </button>
         <div class="media-list" id="tvshows-list"></div>
-        <button class="carousel-btn next" onclick="scrollCarousel('tvshows-list', 1)" aria-label="Scroll TV shows right">
-          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <button class="carousel-btn next" onclick="scrollCarousel('tvshows-list', 1)">
+          <i class="fas fa-chevron-right"></i>
         </button>
       </div>
     </section>
 
     <!-- Trending Anime -->
-    <section class="content-row" id="anime" aria-label="Trending Anime">
+    <section class="content-row" id="anime">
       <div class="row-header">
         <h2 class="row-title">
-          <i class="fas fa-fire" aria-hidden="true"></i>
+          <i class="fas fa-fire"></i>
           Trending Anime
         </h2>
+        <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
       </div>
       <div class="carousel-container">
-        <button class="carousel-btn prev" onclick="scrollCarousel('anime-list', -1)" aria-label="Scroll anime left">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        <button class="carousel-btn prev" onclick="scrollCarousel('anime-list', -1)">
+          <i class="fas fa-chevron-left"></i>
         </button>
         <div class="media-list" id="anime-list"></div>
-        <button class="carousel-btn next" onclick="scrollCarousel('anime-list', 1)" aria-label="Scroll anime right">
-          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <button class="carousel-btn next" onclick="scrollCarousel('anime-list', 1)">
+          <i class="fas fa-chevron-right"></i>
         </button>
       </div>
     </section>
   </div>
 
   <!-- Details Modal -->
-  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" onclick="closeModal()" aria-hidden="true"></div>
+  <div class="modal" id="modal">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
     <div class="modal-container">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close">
-        <i class="fas fa-times" aria-hidden="true"></i>
+      <button class="modal-close" onclick="closeModal()">
+        <i class="fas fa-times"></i>
       </button>
       
       <div class="modal-content">
         <div class="modal-header">
           <div class="modal-poster">
-            <img id="modal-image" src="" alt="Poster" />
+            <img id="modal-image" src="" alt="" />
           </div>
           <div class="modal-info">
             <h2 id="modal-title" class="modal-title"></h2>
             <div class="modal-meta">
-              <div class="rating-container" aria-label="Rating">
-                <i class="fas fa-star" aria-hidden="true"></i>
+              <div class="rating-container">
+                <i class="fas fa-star"></i>
                 <span id="modal-rating" class="rating-text"></span>
               </div>
               <span id="modal-year" class="year-text"></span>
@@ -200,7 +190,7 @@
 
         <div class="server-controls">
           <label for="server" class="server-label">
-            <i class="fas fa-server" aria-hidden="true"></i>
+            <i class="fas fa-server"></i>
             Select Server:
           </label>
           <select id="server" class="server-select" onchange="changeServer()">
@@ -211,22 +201,22 @@
         </div>
 
         <div class="video-container">
-          <iframe id="modal-video" allowfullscreen title="Player"></iframe>
+          <iframe id="modal-video" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Search Modal -->
-  <div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal" id="search-modal">
     <div class="search-modal-content">
-      <button class="search-close" onclick="closeSearchModal()" aria-label="Close search">
-        <i class="fas fa-times" aria-hidden="true"></i>
+      <button class="search-close" onclick="closeSearchModal()">
+        <i class="fas fa-times"></i>
       </button>
       
       <div class="search-header">
         <div class="search-input-container">
-          <i class="fas fa-search search-icon" aria-hidden="true"></i>
+          <i class="fas fa-search search-icon"></i>
           <input 
             type="text" 
             id="search-input" 
@@ -234,7 +224,6 @@
             placeholder="Search for movies, TV shows, or anime..." 
             oninput="searchTMDB()" 
             autocomplete="off"
-            aria-label="Search"
           />
         </div>
       </div>
@@ -242,11 +231,11 @@
       <div class="search-results-container">
         <div id="search-results" class="search-results"></div>
         <div id="search-loading" class="search-loading" style="display: none;">
-          <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+          <i class="fas fa-spinner fa-spin"></i>
           <p>Searching...</p>
         </div>
         <div id="search-empty" class="search-empty" style="display: none;">
-          <i class="fas fa-search" aria-hidden="true"></i>
+          <i class="fas fa-search"></i>
           <p>No results found</p>
         </div>
       </div>
@@ -254,51 +243,52 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
+        <h3 class="footer-logo">NetFlakes</h3>
         <p class="footer-description">Your ultimate destination for movies, TV shows, and anime streaming.</p>
       </div>
       
       <div class="footer-section">
         <h4>Quick Links</h4>
         <div class="footer-links">
-          <a href="#"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
-          <a href="#movies"><i class="fas fa-film" aria-hidden="true"></i> Movies</a>
-          <a href="#tvshows"><i class="fas fa-tv" aria-hidden="true"></i> TV Shows</a>
-          <a href="#anime"><i class="fas fa-dragon" aria-hidden="true"></i> Anime</a>
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+          <a href="#movies"><i class="fas fa-film"></i> Movies</a>
+          <a href="#tvshows"><i class="fas fa-tv"></i> TV Shows</a>
+          <a href="#anime"><i class="fas fa-dragon"></i> Anime</a>
         </div>
       </div>
 
       <div class="footer-section">
         <h4>Information</h4>
         <div class="footer-links">
-          <a href="#"><i class="fas fa-info-circle" aria-hidden="true"></i> About Us</a>
-          <a href="#"><i class="fas fa-shield-alt" aria-hidden="true"></i> Disclaimer</a>
-          <a href="#"><i class="fas fa-envelope" aria-hidden="true"></i> Contact Us</a>
-          <a href="#"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ</a>
+          <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="#"><i class="fas fa-shield-alt"></i> Disclaimer</a>
+          <a href="#"><i class="fas fa-envelope"></i> Contact Us</a>
+          <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
         </div>
       </div>
 
       <div class="footer-section">
         <h4>Follow Us</h4>
         <div class="social-links">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2025 StreamFlix. All rights reserved.</p>
+      <p>&copy; 2025 NetFlakes. All rights reserved.</p>
       <p class="footer-disclaimer">This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
     </div>
   </footer>
 
   <!-- Loading Indicator -->
-  <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+  <div class="loading-screen" id="loading-screen">
     <div class="loading-spinner"></div>
     <p>Loading...</p>
   </div>
